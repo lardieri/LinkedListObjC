@@ -31,7 +31,6 @@
 		DF278F631BBB4B3F00A8477F /* LinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedList.m; sourceTree = "<group>"; };
 		DF278F641BBB4B3F00A8477F /* LinkedListNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedListNode.h; sourceTree = "<group>"; };
 		DF278F651BBB4B3F00A8477F /* LinkedListNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedListNode.m; sourceTree = "<group>"; };
-		DF278F661BBB4B3F00A8477F /* SettableNodePointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettableNodePointer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +67,6 @@
 				DF278F631BBB4B3F00A8477F /* LinkedList.m */,
 				DF278F641BBB4B3F00A8477F /* LinkedListNode.h */,
 				DF278F651BBB4B3F00A8477F /* LinkedListNode.m */,
-				DF278F661BBB4B3F00A8477F /* SettableNodePointer.h */,
 				DF278F5B1BBB4B0A00A8477F /* main.m */,
 			);
 			path = LinkedListObjC;
@@ -249,6 +247,7 @@
 				DF278F611BBB4B0A00A8477F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
