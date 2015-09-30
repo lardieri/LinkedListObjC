@@ -75,6 +75,7 @@
 
 + (void) testList {
 
+  NSNumber * zero = [NSNumber numberWithInt:0];
   NSNumber * one = [NSNumber numberWithInt:1];
   NSNumber * two = [NSNumber numberWithInt:2];
   NSNumber * three = [NSNumber numberWithInt:3];
@@ -112,7 +113,11 @@
   NSLog(@"Remove ten (last element)");
   [testList removeValue:ten];
   [testList printList];
-  
+
+  NSLog(@"Remove zero (element not in the list)");
+  [testList removeValue:zero];
+  [testList printList];
+
 }
 
 @end
