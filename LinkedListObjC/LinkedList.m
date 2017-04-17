@@ -7,7 +7,7 @@
 
 #import "LinkedList.h"
 
-@interface LinkedList () <SettableNodePointer>
+@interface LinkedList ()
 
 @property (strong, nonatomic, readwrite) LinkedListNode * head;
 
@@ -15,18 +15,6 @@
 
 
 @implementation LinkedList
-
-#pragma mark - SettableNodePointer
-
-// Implement our protocol's "node" property using our "head" property.
-- (void) setNode: (LinkedListNode *) newValue {
-  self.head = newValue;
-}
-
-- (LinkedListNode *) node {
-  return self.head;
-}
-
 
 #pragma mark - Public methods
 
@@ -43,21 +31,39 @@
 - (void) addValueToTail: (id) value {
   LinkedListNode * newNode = [[LinkedListNode alloc] initWithValue: value];
 
-  id<SettableNodePointer> current = self;
-  while (current.node) {
-    current = current.node;
-  }
+  // Special case if the list is empty.
+  if (!self.head) {
+    self.head = newNode;
+    return;
+  } else {
+    LinkedListNode * current = self.head;
+    while (current.next) {
+      current = current.next;
+    }
 
-  current.node = newNode;
+    current.next = newNode;
+  }
 }
 
 
 // Remove the first instance of "value" from the list.
 - (void) removeValue: (id) value {
-  for (id<SettableNodePointer> current = self; current.node; current = current.node) {
-    if (current.node.value == value)
+
+  // Special case if the list is empty.
+  if (!self.head) {
+    return;
+  }
+
+  // Special case if the value appears at the head of the list.
+  if (self.head.value == value) {
+    self.head = self.head.next;
+    return;
+  }
+
+  for (LinkedListNode * current = self.head; current.next; current = current.next) {
+    if (current.next.value == value)
     {
-      current.node = current.node.next;
+      current.next = current.next.next;
       return;
     }
   }

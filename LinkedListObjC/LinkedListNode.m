@@ -9,17 +9,6 @@
 
 @implementation LinkedListNode
 
-#pragma mark - SettableNodePointer
-
-// Implement our protocol's "node" property using our "next" property.
-- (void) setNode:(LinkedListNode *) newValue {
-  self.next = newValue;
-}
-
-- (LinkedListNode *) node {
-  return self.next;
-}
-
 #pragma mark - Initializer
 
 - (instancetype) initWithValue: (id) value {

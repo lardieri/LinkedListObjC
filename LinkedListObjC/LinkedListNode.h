@@ -5,9 +5,9 @@
 //  Copyright © 2015 Stephen Lardieri. All rights reserved.
 //
 
-#import "SettableNodePointer.h"
+#import <Foundation/Foundation.h>
 
-@interface LinkedListNode : NSObject <SettableNodePointer>
+@interface LinkedListNode : NSObject
 
 @property (strong, nonatomic) id value;
 @property (strong, nonatomic) LinkedListNode * next;
